@@ -1,0 +1,49 @@
+<p>listado de Heroes</p>
+
+<ul>
+  <li *ngFor="let heroe of heroes; let i = index">{{ i + 1 }} - {{ heroe }}</li>
+</ul>
+
+<button (click)="borrarHeroe()">Borrar</button>
+
+<section *ngIf="heroeBorrado !== ''; else noBorrado">
+  <h1>Héroe Borrado</h1>
+
+  <span>{{ heroeBorrado }}</span>
+</section>
+<ng-template #noBorrado>
+  <h3>No se ha borrado nada</h3>
+</ng-template>
+
+<p>listado de personas</p>
+
+<ul>
+  <li *ngFor="let persona of personas; let i = index">
+    {{ i }} - {{ persona }}
+  </li>
+</ul>
+
+<button (click)="borrarPersona()">Borrar Persona</button>
+
+<section *ngIf="personaBorrada != ''; else personanoborrada">
+  <h1>Persona borrada {{ personaBorrada }}</h1>
+</section>
+
+<ng-template #personanoborrada>
+  <h1>No se ha borrado nada</h1>
+</ng-template>
+
+<p>listado de animales</p>
+
+<ul>
+  <li *ngFor="let animal of animales">{{ animal }}</li>
+</ul>
+
+<button (click)="borrarAnimal()">Borrar animal</button>
+
+<section *ngIf="!animalBorrado; else animalborrado"><h1>No se ha borrado ningún animal</h1></section>
+
+<ng-template #animalborrado>
+  <h1>se ha borrado el animal {{animalBorrado}}</h1>
+</ng-template>
+
